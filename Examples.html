@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>minilinq examples</title>
+    <script src="minilinq.js" type="text/javascript"></script>
+    <script src="countries.js" type="text/javascript"></script>
+</head>
+    <body>
+        
+        <h2>select</h2>
+        <p>Array.select(expression,value) : object</p>
+        <h3>countries.select("name") = countries.select("el=>el.name") = countries.select(function(el){return el.name}) </h3>
+         <script type="text/javascript">
+             document.writeln(countries.select("name").join(", "));
+        </script>
+
+        <h2>count</h2>
+        <p>Array.count(expression,value) : int</p>
+        <h3>countries.count("el=>el.name.length>10")</h3>
+         <script type="text/javascript">
+              document.writeln(countries.count("el=>el.name.length>value",10));
+        </script>
+        
+        
+        <h2>where</h2>
+        
+        <p>Array.where(expression,value) : Array </p>
+
+        <h3>countries.where("el=>el.name[0]=='B'").select("name") = countries.where(function(el){return el.name[0] = "B"}).select("name")</h3>
+        <script type="text/javascript">
+            document.writeln(countries.where("el=>el.name[0] =='B'").select("name").join(", "));
+        </script>
+        <h3>countries.where("el=>el.name[0]=='B'").select("el=>index + '. ' + el.name")</h3>
+        <script type="text/javascript">
+            document.writeln(countries.where("el=>el.name[0] =='B'").select("el=>index + '. ' + el.name").join(", "));
+        </script>
+        <h3>countries.where("el=>el.name[0]==value","C").select("name")</h3>
+        <script type="text/javascript">
+            document.writeln(countries.where("el=>el.name[0] == value","C").select("name").join(", "));
+        </script>
+        
+        
+        <h2>orderBy</h2>
+        <p>Array.where(expression,direction,value) : Array </p>
+        
+        <h2>orderBy</h2>
+        <p>Array.where(expression,direction,value) : Array </p>
+        
+        <h2>first</h2>
+        <p>Array.first(expression,value) : object </p>
+        
+        <h2>last</h2>
+        <p>Array.first(expression,value) : object </p>
+        
+        <h2>any</h2>
+        <p>Array.any(expression,value) : boolean </p>
+        
+        <h2>all</h2>
+        <p>Array.all(expression,value) : boolean </p>
+        
+        <h2>distinct</h2>
+        <p>Array.distinct(expression,value) : Array </p>
+        
+         <h2>skiptake</h2>
+        <p>Array.distinct(skipcount, takecount,value) : Array </p>
+        
+        <h2>groupBy</h2>
+        <p>Array.groupBy(expression, value) : Array[{object key, Array items},...] </p>
+        
+        <h2>selectMany</h2>
+        <p>Array.selectMany(expression, value) : Array </p>
+        
+        <h2>forEach</h2>
+        <p>Array.groupBy(fct, scope) : void </p>
+
+    </body>
+</html>
