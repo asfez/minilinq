@@ -33,7 +33,7 @@ Functions:
 parameters <br/>
 <b>expression :</b><br/>
   - "el=> expression with el,value,index"<br/>
-              - "propertyName"  <=>  "el=>el.propertyName")<br/>
+              - "propertyName"   (similar to "el=>el.propertyName")<br/>
               -  function(el,value,index){ ... }<br/>
 <b>value :</b> <br/>
 A value represented by "value" in the expression. Used to create more static expeession as<br/>
